@@ -1,0 +1,42 @@
+<script>
+    // 1) Добавление элементов в массив осуществляется методом push
+    // let persons = [];
+    // for(let i = 0;i < 3;i++){
+    //     persons.push(prompt('Введите имя сотрудника'));
+    // }
+
+
+    // 2) Удаление элементов из массива. Метод pop удаляет элемент с конца массива. Метод splice удаляет
+    // любые элементы в любом количестве из массива
+
+    let persons = ["Иванов","Петрова","Сидоров"];
+    // let itemRemove = persons.pop();
+    // alert(`Вы удалили элемент ${itemRemove}, остались: ${persons}`);
+
+    // Метод splice(индекс с которого удаляем, сколько элементов удаляем с введенного индекса)
+    // Метод splice всегда возвращает массив удаленных элементов
+    // let mas = persons.splice(1,2)
+    // alert(persons)
+
+    // 3) Для поиска элемента в массиве используются:
+    // alert(persons.includes("Сидорова"));//false
+    // alert(persons.indexOf("Сидоров")); если элемент найден, то indexOf вернет индекс первого вхождения.
+    // Если элемент не найден, то метод вернет -1
+    // let find = persons.find(function(item){
+    //     return item == "Петров";
+    // })
+    // alert(find);
+    // Метод filter находит все элементы согласно условия. Метод возращает новый массив
+
+    let mas = persons.filter(item => item.length > 6)
+    alert(mas);
+    // console.log(mas);
+
+    // Стрелочные функции
+
+    function getSum(a,b){
+        return a + b;
+    }
+
+    const sum = (a,b)=>a + b;
+</script>

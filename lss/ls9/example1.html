@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a{
+            text-decoration: underline;
+        }
+        .b{
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="x">Тестовый заголовок</h1>
+    </div>
+    <script>
+        let header = document.querySelector("h1");//получили объект из тэга
+        header.style.color = 'red';
+        header.style.textAlign = 'center';
+        header.innerText = "Новый header!";
+        header.id = "x";
+        header.className = "a b";//добавили сразу 2 класса
+
+        let block = document.querySelector('div');
+        block.innerHTML += "<h2>Новый контент</h2>";
+    </script>
+</body>
+</html>

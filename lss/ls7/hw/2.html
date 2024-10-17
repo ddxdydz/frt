@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Числа и их сумма</h1>
+        <p id="numbers"></p>
+        <p id="sum"></p>
+    </div>
+    
+    <script>
+        let sum = 0;
+        const numbers = [];
+    
+        for (let i = 2; i <= 100; i++) {
+            if (i % 2 === 0 && i % 3 === 0) {
+                numbers.push(i);
+                sum += i;
+            }
+        }
+    
+        document.getElementById("numbers").innerText = `Числа, удовлетворяющие условиям: ${numbers.join(', ')}`;
+        document.getElementById("sum").innerText = `Сумма чисел: ${sum}`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=!, initial-scale=1.0" />
+    <title>Анкета web-разработчика</title>
+    <style>
+      .tableForm {
+        border: 2px solid #000000;
+        border-collapse: collapse;
+        margin: 0 auto;
+        background-color: rgb(207, 217, 202);
+      }
+      .tableForm td, th {
+        border: solid 2px #000000;
+        vertical-align: middle;
+      }
+      input, textarea {
+        margin: 2px;
+      }
+      .formButtons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="server" method="post" enctype="multipart/form-data">
+      <table class="tableForm">
+        <tr>
+          <td><p>Регистрационное имя</p></td>
+          <td><input type="text" name="fio" /></td>
+        </tr>
+        <tr>
+          <td><p>Пароль</p></td>
+          <td>
+            <input type="text" name="oass" />
+            <div>
+              <input type="text" name="oass" /> 
+              <p style="display: inline;">: подтвердите пароль</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+            <td><p>Ваша специализация</p></td>
+            <td>
+                <select name="specilization">
+                    <option value="WEB">WEB-мастер</option>
+                    <option value="Dev">Dev-мастер</option>
+                </select>
+            </td>
+          </tr>
+          <tr>
+            <td><p>Пол</p></td>
+            <td>
+                <input style="display: inline;" type="radio" name="gender" value="М" checked>М
+                <input style="display: inline;" type="radio" name="gender" value="Ж">Ж
+            </td>
+          </tr>
+          <tr>
+            <td><p>Ваши навыки</p></td>
+            <td>
+                <input type="checkbox" name="lang" value="HTMLCSS">знание HTML и CSS<br>
+                <input type="checkbox" name="lang" value="Perl" >знание Perl<br>
+                <input type="checkbox" name="lang" value="ASP">знание ASP<br>
+                <input type="checkbox" name="lang" value="Photoshop">знание Abobe Photoshop<br>
+                <input type="checkbox" name="lang" value="JAVA">знание JAVA<br>
+                <input type="checkbox" name="lang" value="JavaScript">знание JavaScript<br>
+                <input type="checkbox" name="lang" value="Flash">знание Flash<br>
+            </td>
+          </tr>
+          <tr>
+            <td><p>Дополнительные сведения о себе</p></td>
+            <td>
+                <textarea name="info" cols="30" rows="10"></textarea>
+            </td>
+          </tr>
+      </table>
+      <div class="formButtons">
+        <input type="submit" value="зарегистрировать">
+        <input type="reset" value="очистить">
+      </div>
+    </form>
+  </body>
+</html>

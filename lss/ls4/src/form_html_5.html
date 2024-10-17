@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="server" method="post">
+        <article>
+            <h1>Отправка заявки на вакансию JS разработчика</h1>
+        </article>
+        <fieldset> <!--Группа элементов-->
+            <legend>Персональные данные</legend>
+            <label for="firstname">Введите Ваше имя</label>
+            <input type="text" name="fio" id="firstname"><br><br>
+            <h3>Выберите пол</h3>
+            <label for="m">Мужской</label>
+            <input type="radio" name="gender" id="m" value="m"><br>
+            <label for="w">Женский</label>
+            <input type="radio" name="gender" id="w" value="w">
+        </fieldset>
+
+        <fieldset> <!--Группа элементов-->
+            <legend>Компетенции сотрудника</legend>
+            <label for="english">Английский</label>
+            <input type="checkbox" name="lang" id="english" value="e">
+
+            <label for="german">Немецкий</label>
+            <input type="checkbox" name="lang" id="german" value="german">
+
+            <label for="china">Китайский</label>
+            <input type="checkbox" name="lang" id="china" value="china">
+           
+        </fieldset>
+        <hr>
+        <input type="submit" value="Отправить">
+        
+    </form>
+</body>
+</html>

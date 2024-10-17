@@ -1,0 +1,34 @@
+<script>
+    // let outer = 10;
+    // function showSum(a,b){
+    //     alert(a + b + outer);
+    // }
+
+    // showSum(5,2);
+
+    // Пример 2
+
+    // function getSum(a,b){
+    //   return a + b;
+    // //   Оператор return присваивает функции результат и завершает работу функции
+    // }
+
+    // let res = 2 * getSum(3,4);
+    // alert(res);
+
+
+    // Пример 3
+
+    function calc(a,b){
+        if(isEven(a) && isEven(b)){
+            return a + b;
+        }
+        return a * b;
+    }
+
+    function isEven(n){
+        return n % 2 == 0;
+    }
+
+   alert(calc(2,8));
+</script>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width:600px;
+            text-align: center;/*выравнивание содержимого таблицы по центру*/
+            margin: 0 auto; /*выравнивание таблицы по центру*/
+            border:1px solid gray;
+            border-spacing:0px;
+            
+        }
+        td,th{
+            border:1px solid gray;
+        }
+        img{
+            width: 200px;
+        }
+        h1{
+            text-align: center;
+            color: red;
+        }
+
+        .old{
+            text-decoration: line-through;/*перечеркивание*/
+            font-size: 18px;
+            color: gray;
+        }
+        .new{
+            text-decoration: underline;
+            font-size: 30px;
+            color: green;
+            font-weight: bold;
+            padding-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1><span style="color:blue;">Каталог</span> товаров</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Название</th>
+            <th>Стоимость</th>
+            <th>Фото</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Ауди</td>
+            <td>
+                <span class="old">1000</span>
+                <span class="new">800</span>
+            </td>
+            <td>
+                <img onclick="this.src='goods/skoda.jpg'" src="goods/audi.jpg" alt="">
+            </td>
+        </tr>
+        <tr>
+            <tr>
+                <td>2</td>
+                <td>БМВ</td>
+                <td>1200</td>
+                <td>
+                    <img src="goods/bmw.jpg" alt="">
+                </td>
+            </tr>
+        </tr>
+            <td>3</td>
+            <td onclick="this.style.color='red'">VW</td>
+            <td>
+                <span class="old">900</span>
+                <span class="new">700</span>
+            </td>
+            <td>
+                <img src="goods/vw.jpg" alt="">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

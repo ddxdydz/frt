@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Решение квадратного уравнения</title>
+    <script>
+        let coefficientA = +prompt('Введите коэффициент a');
+        let coefficientB = +prompt('Введите коэффициент b');
+        let coefficientC = +prompt('Введите коэффициент c');
+        let output;
+
+        function calculateDiscriminant(a, b, c) {
+            return (b ** 2) - (4 * a * c);
+        }
+
+        function findRoots(a, b, c) {
+            const discriminant = calculateDiscriminant(a, b, c);
+            if (discriminant === 0) {
+                const root = -b / (2 * a);
+                output = `<h1>Уравнение имеет один корень: ${root.toFixed(2)}<h1>`;
+            } else if (discriminant > 0) {
+                const firstRoot = (-b + Math.sqrt(discriminant)) / (2 * a);
+                const secondRoot = (-b - Math.sqrt(discriminant)) / (2 * a);
+                output = `<h1>Уравнение имеет два корня: ${firstRoot.toFixed(2)} и ${secondRoot.toFixed(2)}<h1>`;
+            } else {
+                output = "<h1>Корней нет</h1>";
+            }
+            document.write(output);
+        }
+
+        findRoots(coefficientA, coefficientB, coefficientC);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

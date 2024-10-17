@@ -1,0 +1,19 @@
+<script>
+    
+    /**
+     * Функция выводит информацию о прибыли клиента
+     * @money - сумма клиента
+     * @countYears - срок вклада
+     */
+    function showProfit(money,countYears){
+        let rate = countYears > 3 ? 20 : 15;//ставка по депозиту
+        for(let i = 1;i <= countYears;i++){
+            let profit = money * rate / 100;
+            money += profit;
+            document.write(`За ${i} год Ваша прибыль: ${profit}, Ваша сумма: ${money}<hr>`);
+        }
+    }
+
+    showProfit(100000,5);
+    
+</script>

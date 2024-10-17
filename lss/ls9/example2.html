@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .x{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <h1>1 заголовок</h1>
+    <h1>2 заголовок</h1>
+    <h1>3 заголовок</h1>
+    <h1>4 заголовок</h1>
+    <h1>5 заголовок</h1>
+    <h1>6 заголовок</h1>
+
+    <script>
+        let headers = document.querySelectorAll('h1');
+        for(let i = 0,size = 20;i < headers.length;i++,size += 15){
+            let color = i  % 2 == 0 ? 'red' : 'blue';
+            headers[i].style.color = color;
+            headers[i].style.fontSize = size + 'px';
+            headers[i].onclick = function(){
+                this.style.color = 'gray';
+                if(headers[i].classList.contains('x')){//если класс х существует у элемента
+                    headers[i].classList.remove('x');//удаляем класс, если он есть
+                    this.style.color = color;//меняем цвет на исходный
+                }else{
+                    headers[i].classList.add('x');
+                }
+            }
+            headers[i].id = "x_" + i;
+        }
+    </script>
+    
+</body>
+</html>

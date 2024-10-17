@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Галерея изображений</title>
+    <style>
+      .image-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .image-item {
+        margin: 10px;
+        text-align: center;
+        width: 30%; /* Установка ширины для 3 изображений в строке */
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Галерея изображений</h1>
+    <section class="image-container" id="imageContainer">
+    </section>
+
+    <script>
+      // Функция-конструктор для создания объектов изображений
+      function ImageItem(id, title, src) {
+        this.id = id;
+        this.title = title;
+        this.src = src;
+      }
+
+      // Создание массива с изображениями
+      const images = [
+        new ImageItem(1, "Изображение 1", "https://r.mradx.net/pictures/37/46F42F.png"),
+        new ImageItem(2, "Изображение 2", "https://r.mradx.net/pictures/37/46F42F.png"),
+        new ImageItem(3, "Изображение 3", "https://r.mradx.net/pictures/37/46F42F.png"),
+        new ImageItem(4, "Изображение 4", "https://r.mradx.net/pictures/37/46F42F.png"),
+        new ImageItem(5, "Изображение 5", "https://r.mradx.net/pictures/37/46F42F.png"),
+        new ImageItem(6, "Изображение 6", "https://r.mradx.net/pictures/37/46F42F.png"),
+        new ImageItem(7, "Изображение 7", "https://r.mradx.net/pictures/37/46F42F.png")
+      ];
+
+      // Функция для отображения изображений на странице
+      function displayImages() {
+        const container = document.getElementById("imageContainer");
+
+        for (let i = 0; i < images.length; i++) {
+          const image = images[i];
+
+          const itemDiv = document.createElement("div");
+          itemDiv.classList.add("image-item");
+
+          itemDiv.innerHTML = `
+                    <h3>${image.title}</h3>
+                    <img src="${image.src}" alt="${image.title}">
+                `;
+
+          container.appendChild(itemDiv);
+        }
+      }
+
+      // Вызываем функцию для отображения изображений
+      displayImages();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Информация о студентах-ударниках</h1>
+        <ul id="students"></ul>
+    </div>
+    
+    <script>
+        // Функция-конструктор для создания объекта студента
+        function Student(id, fio, grade) {
+            this.id = id;
+            this.fio = fio;
+            this.grade = grade;
+        }
+    
+        // Создаем массив студентов
+        const students = [
+            new Student(1, 'Иванов Иван Иванович', 4.7),
+            new Student(2, 'Петрова Анна Павловна', 3.8),
+            new Student(3, 'Сидоров Сидор Сидорович', 5.0),
+            new Student(4, 'Кузнецова Мария Николаевна', 4.2),
+            new Student(5, 'Смирнов Алексей Сергеевич', 4.8)
+        ];
+    
+        // Порог для определения ударников
+        const gradeThreshold = 4.5;
+    
+        // Функция для получения информации о ударниках
+        function getHonorStudents(students) {
+            return students.filter(student => student.grade >= gradeThreshold);
+        }
+    
+        // Получаем список студентов-ударников
+        const honorStudents = getHonorStudents(students);
+    
+        // Вывод информации о ударниках на страницу
+        const studentsList = document.getElementById('students');
+    
+        honorStudents.forEach(student => {
+            const listItem = document.createElement('li');
+            listItem.innerText = `ID: ${student.id}, ФИО: ${student.fio}, Средний балл: ${student.grade}`;
+            studentsList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>

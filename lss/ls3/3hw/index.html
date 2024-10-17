@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Анкета</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      h2,
+      h3 {
+        text-align: center;
+      }
+      p {
+        display: inline;
+      }
+      input {
+        margin: 2px;
+        margin-top: 4px;
+      }
+      .mainForm {
+        margin: 2px;
+        padding: 2%;
+        border: 2px solid black;
+        width: 40%;
+      }
+      .shortNumber {
+        width: 10%;
+      }
+      input[type$="checkbox"] {
+        margin-left: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mainForm">
+      <form action="server" method="post" enctype="multipart/form-data">
+        <h2>АНКЕТА</h2>
+        <h3>участника конкурса на замещение вакантной должости</h3>
+        
+        <p>Фамилия</p>
+        <input type="text" name="surname" /><br />
+
+        <p>Имя</p>
+        <input type="text" name="name" /><br />
+
+        <p>Отчество</p>
+        <input type="text" name="middlename" /><br />
+
+        <p>Дата рождения:</p>
+        <p>год</p>
+        <input class="shortNumber" type="number" name="year"/>
+        <p>, месяц</p>
+        <input class="shortNumber" type="number" name="month"/>
+        <p>, число</p>
+        <input class="shortNumber" type="number" name="number"/><br />
+
+        <p>Образование</p>
+        <select name="specilization">
+          <option value="High">Высшее</option>
+          <option value="Other">Другое</option>
+        </select><br />
+
+        <p>Время работы по специальности</p>
+        <input class="shortNumber" type="number" name="count"/>
+        <input type="text" name="unitType" value="лет" /><br />
+
+        <p>Владение следующими иностранными языками:</p><br />
+        <input type="checkbox" name="english"/> 
+        <p>английским</p>
+        <select name="level">
+            <option value="defoult"></option>
+            <option value="dictionary">чистаю со словарём</option>
+            <option value="Other">владею свободно</option>
+        </select><br />
+        <input type="checkbox" name="franch"/> 
+        <p>французским</p>
+        <select name="level">
+            <option value="defoult"></option>
+            <option value="dictionary">чистаю со словарём</option>
+            <option value="Other">владею свободно</option>
+        </select><br />
+        <input type="checkbox" name="spanich"/> 
+        <p>испанским</p>
+        <select name="level">
+            <option value="defoult"></option>
+            <option value="dictionary">чистаю со словарём</option>
+            <option value="Other">владею свободно</option>
+        </select><br />
+        <input type="checkbox" name="japanese"/> 
+        <p>японский</p>
+        <select name="level">
+            <option value="defoult"></option>
+            <option value="dictionary">чистаю со словарём</option>
+            <option value="Other">владею свободно</option>
+        </select><br />
+        <input type="checkbox" name="otherLanguage"/> 
+        <input type="text" name="unitType" value="другим (укажите, каким)" />
+        <select name="level">
+            <option value="defoult"></option>
+            <option value="dictionary">чистаю со словарём</option>
+            <option value="Other">владею свободно</option>
+        </select><br />
+      </form>
+    </div>
+  </body>
+</html>

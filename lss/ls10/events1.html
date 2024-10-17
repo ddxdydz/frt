@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="randomColor.js"></script>
+    <script>
+        function f(color){
+            if(!color){
+                color = getRandomColor();
+            }
+            let header = document.querySelector('h1');
+            header.style.color = color;
+        }
+    </script>
+</head>
+<body>
+    <h1>Тестовый заголовок</h1>
+    <button onclick="f()">OK</button>
+    <select onchange="f(value)">
+        <option value="blue">Синий</option>
+        <option value="red">Красный</option>
+        <option value="green">Зеленый</option>
+    </select>
+</body>
+</html>

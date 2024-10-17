@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Анкета web-разработчика</title>
+</head>
+<body>
+    <form action="server" method="post">
+        <table border="1" width="40%" height="850px" style="border-collapse: collapse;">
+            <tr>
+                <td class="left">Регистрационное имя</td>
+                <td class="right">
+                    <input type="text" name="name">
+                </td>
+            </tr>
+            <tr>
+                <td class="left">Пароль</td>
+                <td class="right">
+                    <input type="password" name="psw" style="margin-bottom: 5px;"><br>
+                    <input type="password" name="psw">:подтвердите пароль
+                </td>
+            </tr>
+            <tr>
+                <td class="left">Ваша специализация</td>
+                <td class="right">
+                    <select name="job">
+                        <option value="web">Web-мастер</option>
+                        <option value="net">.NET разработчик</option>
+                        <option value="java">Java разработчик</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="left">Пол</td>
+                <td class="right">
+                    М<input type="radio" name="sex" value="male">
+                    Ж<input type="radio" name="sex" value="female">
+                </td>
+            </tr>
+            <tr>
+                <td class="left">Ваши навыки</td>
+                <td class="right">
+                    <input type="checkbox" name="knowledge" value="Html_Css">знание HTML и CSS<br>
+                    <input type="checkbox" name="knowledge" value="Perl">знание Perl<br>
+                    <input type="checkbox" name="knowledge" value="ASP">знание ASP<br>
+                    <input type="checkbox" name="knowledge" value="Photoshop">знание Adobe Photoshop<br>
+                    <input type="checkbox" name="knowledge" value="Java">знание Java<br>
+                    <input type="checkbox" name="knowledge" value="JavaScript">знание JavaScript<br>
+                    <input type="checkbox" name="knowledge" value="Flash">знание Flash<br>
+                </td>
+            </tr>
+            <tr>
+                <td class="left">Дополнительные сведения о себе</td>
+                <td class="right">
+                    <textarea name="info" cols="25" rows="10">
+
+                    </textarea>
+                </td>
+            </tr>
+        </table>
+        <hr>
+        <input type="submit" name="register" value="Зарегистрировать">
+        <input type="reset" name="reset" value="Очистить форму">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+    <div class="container">
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-8">
+            <div class="card border-light mb-3">
+              <img
+                src="https://avatars.mds.yandex.net/get-mpic/5284155/img_id6193455735334854589.jpeg/orig"
+                class="card-img"
+                alt="card-img-corner"
+              />
+            </div>
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+

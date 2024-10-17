@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Случайные числа</h1>
+        <p id="numbers"></p>
+        <p id="sum"></p>
+        <p id="average"></p>
+    </div>
+    
+    <script>
+        // Создание массива и заполнение его случайными числами
+        const randomNumbers = [];
+        for (let i = 0; i < 10; i++) {
+            randomNumbers.push(Math.floor(Math.random() * 100) + 1);
+        }
+        
+        // Вычисление суммы элементов массива
+        let sum = 0;
+        for (let i = 0; i < randomNumbers.length; i++) {
+            sum += randomNumbers[i];
+        }
+        
+        // Вычисление среднего арифметического
+        const average = sum / randomNumbers.length;
+        
+        // Вывод на страницу
+        document.getElementById("numbers").innerText = `Элементы массива: ${randomNumbers.join(', ')}`;
+        document.getElementById("sum").innerText = `Сумма элементов: ${sum}`;
+        document.getElementById("average").innerText = `Среднее арифметическое: ${average.toFixed(2)}`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<script>
+    // Цель функции конструктора - построить объект и заполнить его свойствами
+    // Функция конструктор - это шаблон для создания объектов
+
+    function Person(fio,salary){
+        this.fio = fio;
+        this.salary = salary;
+        this.showInfo = function(){
+            document.write(`<h2>Сотрудник ${this.fio} зарабатывает ${this.salary}</h2>`);
+        }
+    }
+
+    function addPerson(){
+        let name = prompt('Введите имя нового сотрудника');
+        let salary = +prompt('Введите оклад нового сотрудника');
+        let newPerson = new Person(name,salary);
+        persons.push(newPerson);
+        document.write(`<h1>После добавления нового сотрудника:</h1>`);
+        showPersons();
+    }
+
+    function showPersons(){
+        for(let item of persons){
+            item.showInfo();
+        }
+    }
+
+    function removePerson(){
+        let name = prompt('Введите имя сотрудника, которого сокращаем');
+        for(let i = 0;i < persons.length;i++){
+            if(persons[i].fio == name){
+                persons.splice(i,1);
+                break;    
+            }
+        }
+        document.write(`<h1 style="color">После удаления нового сотрудника:</h1>`);
+        showPersons();
+    }
+
+    let person1 = new Person("Иван",100000);
+    let person2 = new Person("Петр",150000);
+    let person3 = new Person("Игорь",130000);
+
+    let persons = [person1,person2,person3];
+    // document.write(`<h1>До добавления нового сотрудника:</h1>`);
+    // showPersons();
+    // addPerson();
+    removePerson();
+
+  
+</script>

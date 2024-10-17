@@ -1,0 +1,16 @@
+td, th {
+    border: 2px solid black;
+}
+
+
+.left{
+    background-color: #8db493e7;
+}
+
+.right{
+    background-color: rgb(215, 215, 215);
+}
+
+td {
+    padding-left: 10px;
+}

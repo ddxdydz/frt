@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rotate{
+            transform: rotate(180deg);
+        }
+        .black{
+            background-color: azure;
+            width: 50px;
+            height: 50px;
+        }
+        .white{
+            width: 50px;
+            height: 50px;
+            background-color: bisque;
+        }
+        
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        const SIZE_ROWS = 10;
+        const SIZE_FIELDS = 10;
+        const desk = [
+            ['','A','B','C','D','E','F','G','H',''],
+            ['8','&#9816;','&#9816;','&#9816;','&#9816;','&#9816;','&#9816;','&#9816;','&#9816;','8'],
+            ['7','&#9816;','&#9816;','C&#9816;','&#9816;','&#9816;','&#9816;','&#9816;','&#9816;','7'],
+            ['6','','','','','','','','','6'],
+            ['5','','','','','','','','','5'],
+            ['4','','','','','','','','','4'],
+            ['3','','','','','','','','','3'],
+            ['2','&#9816;','&#9816;','&#9816;','&#9816;','&#9816;','&#9816;','&#9816;','&#9816;','3'],
+            ['1','&#9816;','&#9816;','C&#9816;','&#9816;','&#9816;','&#9816;','&#9816;','&#9816;','2'],
+            ['','A','B','C','D','E','F','G','H','']
+        ]
+
+        let table = document.createElement('table');
+        for(let i = 0;i < SIZE_ROWS;i++){//счетчик для строк
+            let tr = document.createElement('tr');
+            for(let j = 0;j < SIZE_FIELDS;j++){//цикл по ячейкам строки
+                let td = document.createElement('td');//создали ячейку
+                if(i == 0 || j == 0 || i == SIZE_ROWS - 1 || j == SIZE_FIELDS - 1){
+                    if(i == 0 || j == SIZE_FIELDS - 1){
+                        td.className = 'rotate';
+                    }
+                }else{
+                    td.className = (i + j) % 2 == 0 ? 'white' : 'black' 
+                }
+
+                td.innerHTML = desk[i][j];//заполняем ячейкуы
+                tr.append(td);//добавили в строку созданную ячейку
+            }
+            table.append(tr);//помещаем созданную строку в таблицу
+        }
+        document.querySelector('div').append(table);
+    </script>
+</body>
+</html>

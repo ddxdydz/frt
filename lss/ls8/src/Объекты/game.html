@@ -1,0 +1,35 @@
+<script>
+    function Question(text,answers,correct,bonus){
+        this.text = text;
+        this.answers = answers;
+        this.correct = correct;
+        this.bonus = bonus;
+    }
+
+    let q1 = new Question('2 * 2',[2,4,6,8],2,100);
+    let q2 = new Question('3 * 3',[2,4,6,9],4,500);
+    let q3 = new Question('4 * 2',[8,4,6,1],1,800);
+
+    let sum = 0;//сумма игрока, изанчально 0
+    let questions = [q1,q2,q3];
+    for(let item of questions){
+        let text = item.text + "\n";
+        for(let i = 0;i < item.answers.length;i++){
+            text += `${i + 1}) ${item.answers[i]}\n`;
+        }
+        let answer = +prompt(text);
+        if(answer == item.correct){
+            sum += item.bonus;
+        }else{
+            alert('Вы проиграли!');
+            sum = 0;
+            break;
+        }
+    }
+
+    if(sum > 0){
+        alert('Поздравляем, Вы победили, Ваша сумма = ' + sum);
+    }
+
+
+</script>

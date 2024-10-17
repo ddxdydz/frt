@@ -1,0 +1,17 @@
+<script>
+    let table = "<table border='1' width='800'>";
+    let i = 1;//счетчик строк
+    while(i <= 100){
+        table += "<tr>";
+            let j = 1;//счетчик столбцов
+            while(j <= 10){
+                let color = j % 2 == 0 ? "red" : "blue";
+                table += `<td style="color:${color};">${i * j}</td>`;
+                j++;
+            }
+        table += "</tr>";
+        i++;        
+    }
+    table += "</table>";
+    document.write(table);
+</script>

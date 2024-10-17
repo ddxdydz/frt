@@ -1,0 +1,24 @@
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card {
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+a:hover {
+    transform: translateY(-5px);
+}
+
+button:hover {
+    transform: translateY(-5px);
+}
+
+#promo {
+    margin-bottom: 25px;
+}

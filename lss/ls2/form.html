@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опросник</title>
+
+</head>
+<body>
+    <form action="server" method="post" enctype="multipart/form-data">
+        <p>Выберите файл &#9816;</p>
+        <input type="file" name="photo[]" multiple accept="image/*  ">
+
+        <p>Введите Ваше имя</p>
+        <input type="text" name="fio">
+
+        <p>Введите свой пароль</p>
+        <input type="password" name="pass">
+
+        <p>Расскажите о себе</p>
+        <textarea name="info" cols="30" rows="10"></textarea>
+
+        <p>Ваш возраст</p>
+        <input type="number" name="age" min="18" max="50">
+
+        <p>Какие языки программирования Вы знаете?</p>
+        <input type="checkbox" name="lang" value="JS">JS<br>
+        <input type="checkbox" name="lang" value="PHP">PHP<br>
+        <input type="checkbox" name="lang" value="Java">Java<br>
+
+        <p>Ваш город</p>
+        <input type="radio" name="city" value="Томск">Томск <br>
+        <input type="radio" name="city" value="Москва">Москва <br>
+        <input type="radio" name="city" value="Другой">Другой <br>
+
+        <p>Какой у Вас опыт работы</p>
+        <select name="experience">
+            <option value="Менее 3 лет">Менее 3 лет</option>
+            <option value="От 3 лет">От 3 лет</option>
+        </select>
+
+        <p>Выберите Вашу дату рождения</p>
+        <input type="date" name="birthday"> <br><br>
+
+        <input type="submit" value="Сохранить">
+    </form>
+</body>
+</html>

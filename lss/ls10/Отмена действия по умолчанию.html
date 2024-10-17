@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = ()=>{
+            let link = document.querySelector('a');
+            // Если функция запускается по событию, то у этой функции первый параметр
+            // это объект event. У объекта event самое главное свойство - это target, которое означает
+            // источник события, то есть элемент с которым совершено событие. Чтобы отменить действие
+            // по умолчанию для этого события - используйте метод preventDefault
+            link.onclick = e => {
+                e.preventDefault();//отмена действия по умолчанию
+                console.log(e);
+                // alert('Перехода по ссылке не будет!');
+                location.href = "https://mail.ru";
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="https://yandex.ru">Перейти в поисковик</a>
+</body>
+</html>

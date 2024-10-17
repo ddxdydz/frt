@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function calculateCallCost(minutes, costPerMinute) {
+        const dayOfWeek = new Date().getDay(); // Получаем текущий день недели
+        let totalCost = minutes * costPerMinute;
+
+        // если суббота (6) или воскресенье (0) для применения скидки
+        if (dayOfWeek === 6 || dayOfWeek === 0) {
+          totalCost *= 0.8; // скидка 20%
+        }
+
+        document.write(
+          `Разговор продлился ${minutes} минут, стоимость разговора: ${totalCost.toFixed(2)}. <br>`
+        );
+      }
+
+      // Пример вызова функции
+      calculateCallCost(10, 2.5);
+    </script>
+  </body>
+</html>

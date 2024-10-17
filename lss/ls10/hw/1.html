@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Шахматная доска</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      table {
+        border-collapse: collapse;
+        margin: 20px;
+      }
+      td {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 2em;
+        border-collapse:collapse; 
+        border-color: black; 
+        border-style: solid; 
+        border-width: 1px;
+      }
+      .white {
+        background-color: #ffffff;
+      }
+      .black {
+        background-color: rgb(192, 192, 192);
+      }
+      th {
+        padding: 10px;
+        font-size: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="chessboard"></table>
+
+    <script>
+      const chessboard = document.getElementById("chessboard");
+
+      // Создание верхних заголовков доски
+      const headerRow = document.createElement("tr");
+      headerRow.appendChild(document.createElement("th")); // Левый верхний угол доски
+      // Верхние заголовки столбцов (A-H)
+      for (let i = 0; i < 8; i++) {
+        const th = document.createElement("th");
+        th.textContent = String.fromCharCode(65 + i); // A-H
+        headerRow.appendChild(th);
+      }
+      chessboard.appendChild(headerRow);
+
+      // Генерация строк шахматной доски
+      for (let i = 0; i < 8; i++) {
+        const row = document.createElement("tr");
+
+        // Нумерация строк (1-8)
+        const th = document.createElement("th");
+        th.textContent = 8 - i; // 8 - i для обратного порядка
+        row.appendChild(th);
+
+        for (let j = 0; j < 8; j++) {
+          const td = document.createElement("td");
+          td.className = (i + j) % 2 === 0 ? "white" : "black"; // Чередование цветов
+          row.appendChild(td);
+        }
+
+        chessboard.appendChild(row);
+      }
+    </script>
+  </body>
+</html>

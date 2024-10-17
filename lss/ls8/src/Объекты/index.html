@@ -1,0 +1,35 @@
+<script>
+    // Объект это тип данных для хранения элементов в виде ключ:значение.
+    // Объект описывает свойства и поведение элемента. 
+
+    function getInfo(){
+        return `${this.fio} зарабатывает ${this.salary}`;
+    }
+
+    let person1 = {
+        id:1,
+        fio:'Иванов',
+        salary: 100000,
+        
+    }
+    let person2 = {
+        id:2,
+        fio:'Петров',
+        salary: 120000,
+       
+    }
+    let person3 = {
+        id:3,
+        fio:'Сидоров',
+        salary: 110000,
+    }
+
+    // person1.age = 25;
+    // console.log(person1);
+
+    let persons = [person1,person2,person3];
+    for(let item of persons){
+        item.getInfo = getInfo;
+        console.log(item.getInfo());
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        // Пример добавления элемент в конец списка - используем метод append
+        let list = document.createElement('ul');//<ul></ul>
+        for(let i = 0;i < 10;i++){
+            let item = document.createElement('li');//<li></li>
+            item.innerText = `Элемент №${i + 1}`;
+            list.append(item);
+        }
+
+        // Вставить элемент списка между 6 и 7 элементом
+        let newItem = document.createElement('li');
+        newItem.innerText = 'Новый созданный элемент!';
+        newItem.style.color = 'red';
+        newItem.style.fontWeight = 'bold';
+        list.insertBefore(newItem,list.children[6]);
+        document.querySelector('div').append(list);
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Homework 1.2 </title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: 2px solid;
+        }
+    </style>
+</head>
+
+<body>
+   <table border="" cellpadding="5">
+     <tr>
+        <td style="background-color: rgb(188, 255, 87);"> Регистрационное имя </td>
+        <td style="background-color: rgba(128, 128, 128, 0.5);">
+            <input type="text" name="fio">
+        </td>
+     </tr>
+
+     <tr>
+        <td style="background-color: rgb(188, 255, 87);"> Пароль </td>
+        <td style="background-color: rgba(128, 128, 128, 0.5);">
+            <input type="password" name="pwd"> <br> 
+            <input type="password" name="pass"> :подтвердите пароль
+        </td>
+     </tr>
+
+     <tr>
+        <td style="background-color: rgb(188, 255, 87);"> Ваша специализация </td>
+        <td style="background-color: rgba(128, 128, 128, 0.5);">
+         <select name="job"> 
+         <option value="Web-мастер"> Web-мастер </option>
+         <option value="Что-то ещё"> Что-то ещё </option>
+         <option value="Третий выбор"> Третий выбор </option>
+        </td>
+     </tr>
+
+     <tr>
+        <td style="background-color: rgb(188, 255, 87);"> Пол </td>
+        <td style="background-color: rgba(128, 128, 128, 0.5);">
+            <input type="radio" name="sex" value="М"> М 
+            <input type="radio" name="sex" value="Ж"> Ж
+        </td>
+     </tr>
+
+     <tr>
+        <td style="background-color: rgb(188, 255, 87);"> Ваши навыки </td>
+        <td style="background-color: rgba(128, 128, 128, 0.5);">
+            <input type="checkbox" name="lang" value="HTML и CSS"> Знание HTML и CSS <br>
+            <input type="checkbox" name="lang" value="Perl"> Знание Perl <br>
+            <input type="checkbox" name="lang" value="ASP"> Знание ASP <br>
+            <input type="checkbox" name="lang" value="Adobe photoshop"> Знание Adobe photoshop <br>
+            <input type="checkbox" name="lang" value="JAVA"> Знание JAVA <br>
+            <input type="checkbox" name="lang" value="JavaScript"> Знание JavaScript <br>
+            <input type="checkbox" name="lang" value="Flash"> Знание Flash
+        </td>
+     </tr>
+
+     <tr>
+        <td style="background-color: rgb(188, 255, 87);"> Дополнительные сведения о себе </td>
+        <td style="background-color: rgba(128, 128, 128, 0.5);">
+            <textarea name="info" cols="40" rows="8"> </textarea>
+        </td>
+     </tr>
+
+   </table>
+   <p> <input type="submit" value="Зарегистрировать"> <input type="submit" value="Очистить форму"> </p>
+</body>
+</html>

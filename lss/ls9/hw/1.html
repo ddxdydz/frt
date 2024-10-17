@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Товары</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #000;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Список товаров</h1>
+    <table id="productTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Здесь будет содержимое таблицы -->
+      </tbody>
+    </table>
+    <div id="averagePrice"></div>
+
+    <script>
+      // Функция-конструктор для создания товара
+      function Product(id, title, price) {
+        this.id = id;
+        this.title = title;
+        this.price = price;
+      }
+
+      // массив товаров
+      const products = [
+        new Product(1, "Ноутбук", 50000),
+        new Product(2, "Телефон", 30000),
+        new Product(3, "Планшет", 25000),
+        new Product(4, "Монитор", 20000),
+      ];
+
+      // Функция для отображения информации о товарах в таблице
+      function displayProducts() {
+        const tableBody = document.querySelector("#productTable tbody");
+        let totalPrice = 0;
+
+        products.forEach((product) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+                    <td>${product.id}</td>
+                    <td>${product.title}</td>
+                    <td>${product.price}</td>
+                `;
+          tableBody.appendChild(row);
+          totalPrice += product.price;
+        });
+
+        // средняя стоимость
+        const averagePrice = totalPrice / products.length;
+        document.getElementById(
+          "averagePrice"
+        ).innerText = `Средняя стоимость товара: ${averagePrice.toFixed(2)}`;
+      }
+
+      // Вызываем функцию для отображения информации
+      displayProducts();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+#first p{
+    color: red;
+    font-size: 25px;
+    font-weight: bold;/*жирный шрифт*/
+    font-style: italic; /*курсив*/
+}
+
+#second p{
+    color: blue;
+}

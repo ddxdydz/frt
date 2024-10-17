@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 600px;
+            margin: 0 auto;
+            border:1px solid red;
+            text-align: center;
+            border-spacing: 0px;
+        }
+        td{
+            width:20px;
+            height: 20px;
+            border:1px solid red;
+        }
+
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        let table = document.createElement('table');
+        for(let i = 1;i <= 10;i++){//счетчик для строк
+            let tr = document.createElement('tr');
+            for(let j = 1;j <= 10;j++){//цикл по ячейкам строки
+                let td = document.createElement('td');//создали ячейку
+                td.innerText = i * j;//заполняем ячейкуы
+                tr.append(td);//добавили в строку созданную ячейку
+            }
+            table.append(tr);//помещаем созданную строку в таблицу
+        }
+        document.querySelector('div').append(table);
+    </script>
+</body>
+</html>

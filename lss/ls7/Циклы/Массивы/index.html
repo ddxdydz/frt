@@ -1,0 +1,43 @@
+<script>
+    let persons = ["Иванов","Петров","Романов"];
+
+    // alert(persons[persons.length - 1])
+
+    // Способы обхода массива:
+
+    // 1ый способ:
+
+    // for(let i = 0;i < persons.length;i++){
+    //     console.log(`${i + 1}) ${persons[i]}`);
+    // }
+
+// 2ой способ:
+    // persons.forEach(function(item,i){
+    //     console.log(`${i + 1}) ${item}`);
+    // })
+
+    // 3ий способ
+
+    // for(let item of persons){
+    //     console.log(item);
+    // }
+
+    // 4ый Способ
+    // let i = 0;
+    // while(i < persons.length){
+    //     console.log(persons[i]);
+    //     i++;
+    // }
+
+    // Найдем сумму нечетных элементов массива
+    let mas = [2,3,6,7,1];
+    s = 0;
+    for(let item of mas){
+        if (item % 2 != 0){
+            s += item;
+        }
+    }
+    alert(s);
+
+
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Операции с числами</title>
+    <script>
+        let num1 = +prompt('Введите первое число (a)');
+        let num2 = +prompt('Введите второе число (b)');
+        let outputMessage;
+
+        function performCalculation(x, y) {
+            let result;
+            if (x > 0 && y > 0) {
+                result = x - y;
+                outputMessage = `<h1>Разность чисел: ${x} - ${y} = ${result}</h1>`;
+            } else if (x < 0 && y < 0) {
+                result = x * y;
+                outputMessage = `<h1>Произведение чисел: ${x} * ${y} = ${result}</h1>`;
+            }else if(x == 0 || y == 0){
+                outputMessage = `<h1>Действие непредусмотрено</h1>`;
+            }
+             else {
+                result = x + y;
+                outputMessage = `<h1>Сумма чисел: ${x} + ${y} = ${result}</h1>`;
+            }
+            document.write(outputMessage);
+        }
+
+        performCalculation(num1, num2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

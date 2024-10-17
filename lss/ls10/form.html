@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       window.onload = function(){
+           document.querySelector('form').onsubmit = function(e){
+               e.preventDefault();//отмена перехода на сервер
+               let first = +document.querySelector('#first').value;
+               let second = +document.querySelector('#second').value;
+               let s = first + second;
+               let header = document.querySelector('h1');//ищем h1
+               if(header){
+                    header.remove();
+               }
+              
+                header = document.createElement('h1');
+                header.innerText = `${first} + ${second} = ${s}`;
+                document.querySelector('body').append(header);
+               } 
+
+       }
+    </script>
+</head>
+<body>
+    <form action="server.php">
+        <label for="first">Введите первое число</label>
+        <input type="number" id="first"><br><br>
+        <label for="second">Введите второе число</label>
+        <input type="number" id="second"><br><br>
+        <input type="submit" value="Вычислить сумму">
+    </form>
+
+</body>
+</html>
