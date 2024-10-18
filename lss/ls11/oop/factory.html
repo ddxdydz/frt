@@ -1,0 +1,76 @@
+<script>
+    class Car{
+        constructor(title,price){
+            this.title = title;
+            this.price = price;
+        }
+    }
+
+    class Factory{
+        constructor(titleFactory,carsFactory){
+            this.titleFactory = titleFactory;
+            this.carsFactory = carsFactory;//массив авто, которые завод может изготовить технически
+        }
+
+        createCar(titleModel){//получим название авто, которое нужно создать
+            if(this.carsFactory.includes(titleModel)){
+                console.log(`Завод ${this.titleFactory} приступил к производсву ${titleModel}....`);
+                let car = new Car(titleModel,parseInt(Math.random() * 4000 + 1000));
+                return car;
+            }else{
+                console.log('Нет технической возможности изготовить ' + titleModel);
+                return null;
+            }
+        }
+    }
+
+    class Diller{
+        constructor(titleDiller,age){
+            this.titleDiller = titleDiller;
+            this.age = age;
+        }
+        createOrder(orderInfo){
+            orderInfo.start();
+            orderInfo.showResultOrder();
+        }
+    }
+
+    class OrderInfo{
+        constructor(factory,titleModels,count){
+            this.factory = factory;
+            this.titleModels = titleModels;
+            this.count = count;
+            this.cars = [];//фура, которую нужно заполнить автомобилями
+            this.sumOrder = 0;
+        }
+
+        start(){
+            for(let i = 0;i < this.count;i++){
+                let car = this.factory.createCar(
+                                this.titleModels[parseInt(Math.random() * this.titleModels.length)]); 
+                if(car){
+                    this.cars.push(car);
+                    this.sumOrder += car.price;
+                }
+            }
+        }
+
+        showResultOrder(){
+            this.cars.forEach((car,i)=>{
+                console.log(`${i + 1}) Автомобиль ${car.title} стоит ${car.price}`);
+            });
+
+            console.log('Стоимость всех авто: ' + this.sumOrder);
+        }
+    }
+
+    // С этого места начинается настройка запуска проекта
+
+    let factory = new Factory('АвтоВАЗ',['Гранта','Веста','Нива']);
+    let count = 30;//будем делать заказ из 30 машин
+    let modelsForOrder = ['Гранта','БМВ','Porshe','Нива'];//модели заказа
+
+    let orderInfo = new OrderInfo(factory,modelsForOrder,count);
+    let diller = new Diller('Элвис',30);
+    diller.createOrder(orderInfo);
+</script>

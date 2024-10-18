@@ -1,0 +1,38 @@
+<script>
+    let count = 0;
+
+    class Company{
+        constructor(title,men){
+            this.title = title;
+            this.men = men;
+        }
+        showInfo(){
+            console.log(`В компании ${this.title} работают ${this.men.length} сотрудников:`);
+            this.men.forEach((man,i) => {
+                console.log(`${i + 1}) ${man.getInfo()}`);
+            });
+        }
+    }
+
+    class Person{
+        constructor(fio,salary){
+            this.fio = fio;
+            this.salary = salary;
+            this.id = ++count;
+        }
+        getInfo(){
+            return `Сотрудник ${this.fio} зарабатывает ${this.salary} (ID = ${this.id})\n`;
+        }
+    }
+
+    let man1 = new Person("Иванов",100000);
+    let man2 = new Person("Петров",150000);
+    let man3 = new Person("Сидоров",120000);
+
+    let persons = [man1,man2,man3];
+
+    let myCompany = new Company("IT Start",persons);
+    myCompany.showInfo();
+
+
+</script>

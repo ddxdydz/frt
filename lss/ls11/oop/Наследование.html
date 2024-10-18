@@ -1,0 +1,28 @@
+<script>
+    class Person{
+        constructor(fio,salary){
+            this.fio = fio;
+            this.salary = salary;
+        }
+        getInfo(){
+            return `Сотрудник ${this.fio} зарабатывает ${this.salary}\n`;
+        }
+    }
+
+    // Если класс потомок наследуется от класса в котором есть конструктор с параметрами, то
+    // в классе потомке тоже нужно сделать конструктор с параметрами и в нем запускать базовый
+    // конструктор через оператор super()
+
+    class Programmer extends Person{
+        constructor(fio,salary,titleLang){
+            super(fio,salary);//это вызова базового конструктор для инициализации базовых(общих) свойств
+            this.titleLang = titleLang;
+        }
+        getInfo(){
+            return `${super.getInfo()}\nСотрудник ${this.fio} использует в работе язык программирования ${this.titleLang}`;
+        }
+    }
+
+    let person = new Programmer("Иван",180000,"JS");
+    console.log(person.getInfo());
+</script>

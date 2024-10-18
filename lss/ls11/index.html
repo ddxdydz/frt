@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = ()=>{
+            let b = document.querySelector('button');
+            b.onclick = function(e){
+                e.target.style.color = 'red';
+                e.target.style.backgroundColor = 'gray';
+            }
+            document.querySelector('a').onclick = e => {
+                e.preventDefault();
+                e.target.remove();
+            } 
+        }
+    </script>
+</head>
+<body>
+    <button>OK</button>
+    <a href="https://mail.ru">Ссылка</a>
+</body>
+</html>

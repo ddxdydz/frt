@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Слайдер изображений</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      .slider {
+        text-align: center;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      button {
+        margin: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <img id="sliderImage" src="" alt="Слайдер" />
+      <div>
+        <button id="prevBtn">Назад</button>
+        <button id="nextBtn">Вперед</button>
+      </div>
+    </div>
+
+    <script>
+      // Массив с изображениями
+      const images = [
+        "imgs/img1.jpg",
+        "imgs/img2.jpg",
+        "imgs/img3.jpg",
+      ];
+      let currentIndex = 0;
+
+      const sliderImage = document.getElementById("sliderImage");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+
+      function updateImage() {
+        sliderImage.src = images[currentIndex];
+      }
+
+      // Добавление события click на кнопку Назад
+      prevBtn.addEventListener("click", (event) => {
+        currentIndex =
+          currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+        updateImage();
+      });
+
+      // Добавление события click на кнопку Вперед
+      nextBtn.addEventListener("click", (event) => {
+        currentIndex =
+          currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+        updateImage();
+      });
+
+      updateImage();
+    </script>
+  </body>
+</html>
