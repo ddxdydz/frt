@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       
+        let mas = ['audi.jpg','bmw.jpg','skoda.jpg','vw.jpg'];
+        let i = 0;
+        window.onload = ()=>{
+            let img = document.querySelector('img');
+            let x = setInterval(() => {//включение таймера
+                if(i == mas.length){
+                    i = 0;
+                }
+                img.src = `images/${mas[i]}`;
+                img.onclick = ()=>{
+                    clearInterval(x);//отключение таймера
+                }
+                i++;
+            }, 2000);    
+        }
+        
+    </script>
+</head>
+<body>
+    <img width="200" src="" alt="">
+</body>
+</html>

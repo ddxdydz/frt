@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            let b = document.createElement('button');
+            b.innerText = "OK";
+            let block = document.querySelector('body');
+            block.append(b);
+            b.addEventListener('click',function(e){
+                e.target.style.color = 'red';
+                for(let i = 1;i <= 5;i++){
+                    let h1 = document.createElement('h1');
+                    h1.innerText = "Заголовок №" + i;
+                    block.append(h1);   
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

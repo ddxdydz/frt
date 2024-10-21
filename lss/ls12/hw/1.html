@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Цвета</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+      .container {
+        text-align: center;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Выберите цвет</h1>
+      <select id="colorSelect">
+        <option>Белый</option>
+        <option>Черный</option>
+      </select>
+      <br /><br />
+      <input type="text" id="colorInput" placeholder="Введите название цвета" />
+      <button id="addColorButton">Добавить цвет</button>
+    </div>
+
+    <script>
+      document
+        .getElementById("addColorButton")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+
+          const colorInput = document.getElementById("colorInput");
+          const colorValue = colorInput.value.trim();
+
+          if (colorValue) {
+            const colorSelect = document.getElementById("colorSelect");
+            const newOption = document.createElement("option");
+            newOption.textContent = colorValue; // Устанавливаем текст новой опции
+            colorSelect.appendChild(newOption); // Добавляем новую опцию в выпадающий список
+            colorInput.value = ""; // Очищаем поле ввода
+          } else {
+            alert("Пожалуйста, введите название цвета."); // Сообщаем об ошибке
+          }
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload =(e)=>{
+            let item = document.querySelector('input');
+            window.onkeydown =(e)=>{
+                if(e.keyCode == 27){
+                    item.remove();
+                }
+            }
+          }
+    </script>
+</head>
+<body>
+    <input type="text" id="">
+</body>
+</html>

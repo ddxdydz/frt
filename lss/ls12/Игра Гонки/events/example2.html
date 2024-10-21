@@ -1,0 +1,38 @@
+<button id="b1">Кнопка 1</button>
+<button id="b2">Кнопка 2</button>
+<button id="b3" onclick="alert('Клик на кнопку 3')">Кнопка 3</button>
+<button id="b4" onclick="alert('Клик на B4');document.querySelector('#b3').click()">Кнопка 4</button>
+
+<a href="#">Ссылка 1</a>
+<a href="#">Ссылка 2</a>
+<a href="#">Ссылка 3</a>
+
+<script>
+
+    // Для получения источника события в функции используется два подхода:
+    // 1) Использовать this
+    // 2) Использовать объект event и его свойство target
+    //  Если функция запускается по событию, то у этой функции всегда первый параметр это объект event
+
+    function f(e){
+        // console.log(this);//this это источник события. Источник события - это элемент, с которым событие произошло
+        // this.remove();
+        // console.log(e.target);
+        e.target.style.color = 'red';
+
+        if(e.target.innerText == "Ссылка 1"){
+            alert('Вы кликнули на первую ссылку');
+        }
+
+    }
+
+    // 1) По клику на первую ссылку - сделать все кнопки синего цвета
+    // 2) По клику на вторую ссылку - удалить все кнопки
+    // 3) По клику на третью ссылку, все остальные ссылки кроме третьей сделать синего цвета
+    
+
+    let links = document.querySelectorAll('a');
+    links.forEach(item => {
+        item.onclick = f;
+    })
+</script>
