@@ -1,0 +1,20 @@
+<script>
+    function PC(title,isStart = false){
+        RAM();
+        Proc();
+        Hard();
+        function RAM(){
+            console.log(isStart ? `Для ПК ${title} модуль RAM запущен`: `Для ПК ${title} модуль RAM выключен`);
+        }
+        function Proc(){
+            console.log(isStart ? `Для ПК ${title} Proc запущен`: `Для ПК ${title} Proc выключен`);
+        
+        }
+        function Hard(){
+            console.log(isStart ? `Для ПК ${title}Hard запущен`: `Для ПК ${title} Hard выключен`);
+        }
+    }
+
+    PC('Acer',true);
+
+</script>

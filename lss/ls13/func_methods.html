@@ -1,0 +1,31 @@
+<script>
+    function showInfo(age,position){
+        console.log(`Пользователю ${this.name} ${age} лет, работает в должности ${position}`);
+    }
+
+    const user = {
+        name:'Иван'
+    }
+
+
+    // showInfo.call(user,25,'Программист');
+    // showInfo.apply(user,[25,'Программист']);
+
+    // Метод bind функцию не вызывает, а возвращает
+    // const test = showInfo.bind(user,25,'Программист');
+    // test();
+
+
+    // Пример использования методов функции при одалживании метода
+
+    function showInfo(){
+        console.log(`Книга ${this.title} содержит информацию...`);
+    }
+
+    const book1 = {title:'Основы JS',show:showInfo};
+    const book2 = {title:'Продвинутый JS',show:()=>console.log('welcome!')};
+
+    // Задача - заменить book2.show на book1.show единоразово
+    // book1.show.call(book2);
+
+</script>
