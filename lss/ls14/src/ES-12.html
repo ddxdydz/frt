@@ -1,0 +1,62 @@
+<h1>1 заголовок</h1>
+<h1>2 заголовок</h1>
+<h1>3 заголовок</h1>
+<script>
+    // Оператор REST - оператор упаковки элементов в массив
+    // Оператор SPREAD - оператор распаковки массива в отдельные элементы
+
+    // Пример на оператор REST
+
+    // function f(a,b,...c){
+    //    let s = a + b;
+    //    c.forEach(item => s += item);
+    //    alert(s);
+    // }
+    // f(10,2,3,4,7,21,90);
+
+
+    // Пример на оператор SPREAD
+    // let mas = [3,4,7,8,3,1];
+    // alert(Math.max(...mas));
+
+    // let m = [11,2,...[3,5,11],6,3];
+    // console.log(m);
+
+    // let headers = [...document.querySelectorAll("h1")];
+    // console.log(headers);
+    // let header = document.createElement('h1');
+    // header.innerText = 'Тестовый заголовок';
+    // headers.push(header);
+    // console.log(headers);
+
+    // Деструктуризация - извлечение из составного элемента его отдельных частей.
+    // let info = ["Иван",20];
+    // let name = info[0];
+    // let age = info[1];
+
+    // let [name,age] = info;
+    // console.log(`Студенту ${name} ${age} лет`);
+
+
+    // let a = 10, b = 20;
+
+    // [b,a] = [a,b];
+    // alert(`a = ${a}, b = ${b}`);
+
+    let user = {
+        fio:'Иванов',
+        age:20
+    }
+
+    // let {fio:name,age:a} = user;
+    // console.log(`Студенту ${name} ${a} лет`);
+
+    function getUser(age){
+        let yearBirth = new Date().getFullYear() - age;
+        return [yearBirth,65 - age];
+    }
+
+    let [year,leftWork] = getUser(25);
+    console.log(`Пользователь родился в ${year} году, ему осталось до пенсии ${leftWork}`);
+
+</script>

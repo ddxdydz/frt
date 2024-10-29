@@ -1,0 +1,26 @@
+<script>
+    let user = '{"fio":"Иванов","age":25,"isAdmin":true}';//строка JSON
+
+    let userObj = JSON.parse(user);//преобразовали строку JSON в объект
+    
+    userObj.date = "2024-10-26";
+
+    userObj.address = {
+        city:'Москва',
+        postalCode:23432234
+    }
+
+    // Конвертация объекта в строку
+
+     let s = JSON.stringify(userObj,null,4);
+
+     let newObj = JSON.parse(s,(key,value)=>{
+        if(key == 'date'){
+            value = new Date(value);
+        }
+        return value;
+     });
+
+     console.log(newObj);
+    
+</script>
