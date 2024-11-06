@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table></table>
+    <h1></h1>
+    <script>
+      let sumPrice = 0;
+      const table = document.querySelector("table");
+      fetch("products.json")
+        .then((text) => text.json())
+        .then((data) =>{
+          data.forEach((element) => {
+            const tr = document.createElement("tr");
+            const tdId = document.createElement("td");
+            tdId.innerText = element.id;
+            tr.append(tdId);
+            const tdTitle = document.createElement("td");
+            tdTitle.innerText = element.title;
+            tr.append(tdTitle);
+            const tdPrice = document.createElement("td");
+            tdPrice.innerText = element.price;
+            tr.append(tdPrice);
+            const tdCount = document.createElement("td");
+            tdCount.innerText = element.count;
+            tr.append(tdCount);
+            const tdSumPrice = document.createElement("td");
+            tdSumPrice.innerText = element.count * element.price;
+            tr.append(tdSumPrice);
+            sumPrice += +element.count * +element.price;
+            table.append(tr);
+            
+          })
+          document.querySelector("h1").innerText = sumPrice;
+        }
+        );
+    </script>
+  </body>
+</html>

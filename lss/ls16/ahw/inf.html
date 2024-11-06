@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+
+  <!-- 
+ все методы jQuery в наших примерах находятся внутри, так называемого, "события готовности документа":
+Это делается для того, чтобы не допустить запуск кода jQuery до того, как веб-страница будет полностью загружена (готова). -->
+
+  $(document).ready(function(){
+
+    // методы jQuery пишем сюда...
+
+  }); 
+
+</head>
+<body>
+  
+</body>
+</html>
+
+
+Выполнить задание на JS, используя: библиотеку JQuery. Механизм Ajax. 
+Задание: 
+"
+Задача (задание): Создать web форму для приема кандидата на работу. По клику на кнопку – данные из формы необходимо собрать и отправить с помощью ajax на сервер, обработка сервером не требуется.
+Результатом выполнения практического задания является интерфейс в котором осуществляется асинхронное взаимодействие с сервером.
+"
+Используйте следйщий код как исходный. Нужно переписать его с учётом требований и задания:
+"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       const isEmail = email => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/i.test(email);
+       const isName = name => /[а-яё]/i.test(name);
+
+        window.onload = ()=>{
+            document.querySelector('form').onsubmit = e=>{
+                e.preventDefault();
+                let name = document.querySelector('#name').value;
+                let email = document.querySelector('#email').value;
+                if(isEmail(email) && isName(name)){
+                    e.target.submit();
+                }
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <form action="server.php">
+        <p>Введите имя</p>
+        <input type="text" id="name"><br>
+        <p>Введите емэйл</p>
+        <input type="text" id="email"><br><br>
+        <input type="submit" value="Сохранить">
+
+    </form>
+</body>
+</html>
+"
+Весь код должен быть в одном документе html. 
+Старайтесь максимум скриптов писать в header как в примере
+Используйте "события готовности документа".
+Используйте "<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>" для установки библиотеки

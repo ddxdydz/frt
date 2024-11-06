@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма кандидата на работу</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const isEmail = email => /^[a-z0-9_-]+@[a-z0-9_-]+\.[a-z]{2,4}$/i.test(email);
+            const isName = name => /^[а-яёА-ЯЁ]+$/i.test(name);
+
+            $('form').on('submit', function(e) {
+                e.preventDefault();
+
+                let name = $('#name').val();
+                let email = $('#email').val();
+                if (!isEmail(email)) {
+                    alert('isEmail');
+                }
+                if (!isName(name)) {
+                    alert('isName');
+                }
+
+                if (isEmail(email) && isName(name)) {
+                    $.ajax({
+                        url: 'server.php',
+                        type: 'POST',
+                        data: { name: name, email: email },
+                        success: function(response) {
+                            alert('Данные успешно отправлены!');
+                            console.log(response);
+                        },
+                        error: function(xhr, status, error) {
+                            alert('Произошла ошибка при отправке данных.');
+                            console.error(error);
+                        }
+                    });
+                } else {
+                    alert('Пожалуйста, проверьте введенные данные.');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <form action="server.php" method="post">
+        <p>Введите имя</p>
+        <input type="text" id="name" required><br>
+        <p>Введите email</p>
+        <input type="text" id="email" required><br><br>
+        <input type="submit" value="Сохранить">
+    </form>
+</body>
+</html>
