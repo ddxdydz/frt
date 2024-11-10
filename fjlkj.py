@@ -1,89 +1,89 @@
-class MediatorInterface:
-    def notify(self, sender, event):
-        pass
+class ProductFlyweight:
+    def __init__(self, name, price, category):
+        self._name = name
+        self._price = price
+        self._category = category
+
+    def display(self, quantity):
+        return "Товар: {}, Цена: {}, Категория: {}, Количество: {}".format(
+            self._name, self._price, self._category, quantity
+        )
 
 
-class Mediator(MediatorInterface):
+class ProductFactory:
     def __init__(self):
-        self.cart = Cart(self)
-        self.inventory = Inventory(self)
-        self.user = User(self)
+        self.products = {}
 
-    def notify(self, sender, event):
-        if event == 'added_to_cart':
-            self.cart.view_cart()
-        elif event == 'checkout':
-            self.order_checkout()
-
-    def order_checkout(self):
-        if self.cart.items:
-            print('Заказ успешно оформлен!')
-            self.cart.clear_cart()
-        else:
-            print('Корзина пуста, добавьте товары в корзину!')
+    def get_product(self, name, price, category):
+        key = (name, price, category)
+        if key not in self.products:
+            self.products[key] = ProductFlyweight(name, price, category)
+        return self.products[key]
 
 
-class Product:
-    def __init__(self, name, price):
-        self.name = name
-        self.price = price
-
-
-class User:
-    def __init__(self, mediator):
-        self.mediator = mediator
-
-    def add_to_cart(self, product):
-        self.mediator.cart.add_to_cart(product)
-
-
-class Cart:
-    def __init__(self, mediator):
-        self.mediator = mediator
+class Order:
+    def __init__(self):
         self.items = []
 
-    def add_to_cart(self, product):
-        self.items.append(product)
-        print(f'{product.name} добавлен в корзину.')
-        self.mediator.notify(self, 'added_to_cart')
+    def add_product(self, product, quantity):
+        self.items.append((product, quantity))
 
-    def view_cart(self):
-        if not self.items:
-            print('Корзина пуста!')
-        else:
-            print('В корзине:')
-            for item in self.items:
-                print(f' - {item.name}: {item.price} рублей')
-
-    def clear_cart(self):
-        self.items.clear()
-        print('Корзина очищена.')
+    def display_order(self):
+        for product, quantity in self.items:
+            print(product.display(quantity))
 
 
-class Inventory:
-    def __init__(self, mediator):
-        self.mediator = mediator
-        self.products = []
 
-    def add_product(self, product):
-        self.products.append(product)
-        print(f'Товар {product.name} добавлен на склад.')
+if __name__ == "__main__":
+    factory = ProductFactory()
+
+    # Создание продуктов через фабрику
+    dog_food = factory.get_product("Корм для собак", 500, "Корм")
+    cat_food = factory.get_product("Корм для кошек", 400, "Корм")
+
+    # Добавление продуктов в заказ с указанием количества
+    order1 = Order()
+    order1.add_product(dog_food, 2)
+    order1.add_product(cat_food, 3)
+
+    # Повторное использование тех же продуктов
+    order2 = Order()
+    order2.add_product(dog_food, 1)
+    order2.add_product(cat_food, 5)
+
+    # Отображение заказов
+    print("Заказ 1:")
+    order1.display_order()
+
+    print("Заказ 2:")
+    order2.display_order()
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Пример использования
 mediator = Mediator()
 
 # Создаем продукты
-product1 = Product("Книга", 500)
-product2 = Product("Ноутбук", 30000)
+product1 = Product("Корм для собак", 500)
+product2 = Product("Корм для кошек", 550)
 
 # Добавляем продукты на склад
 mediator.inventory.add_product(product1)
 mediator.inventory.add_product(product2)
 
 # Пользователь добавляет продукты в корзину
-mediator.user.add_to_cart(product1)  # Книга добавлена
-mediator.user.add_to_cart(product2)  # Ноутбук добавлен
+mediator.user.add_to_cart(product1)
+mediator.user.add_to_cart(product2)
 
 # Просмотр содержимого корзины
 mediator.cart.view_cart()
