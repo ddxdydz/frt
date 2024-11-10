@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Калькулятор Гамбургера</title>
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Калькулятор Гамбургера</h1>
+            <form id="burgerForm">
+                <label for="size">Размер:</label>
+                <select id="size" required>
+                    <option value="small">Маленький (150 рублей, 20 калорий)</option>
+                    <option value="large">Большой (200 рублей, 40 калорий)</option>
+                </select>
+
+                <label for="filling">Начинка:</label>
+                <select id="filling" required>
+                    <option value="chicken">С курицей (+50 рублей, +20 калорий)</option>
+                    <option value="beef">С говядиной (+70 рублей, +15 калорий)</option>
+                    <option value="bacon">С беконом (+65 рублей, +40 калорий)</option>
+                </select>
+
+                <label for="toppings">Добавки:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="spice" value="spice" />Посыпать приправой (+15 рублей, +0 калорий)<br>
+                    <input type="checkbox" id="mayonnaise" value="mayonnaise" />Полить майонезом (+20 рублей, +5 калорий)
+                </div>
+
+                <button type="submit">Рассчитать</button>
+            </form>
+
+            <div id="result" class="result"></div>
+        </div>
+    </body>
+</html>
