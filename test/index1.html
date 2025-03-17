@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интернет-магазин зоотоваров</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .hero {
+            background-image: url('https://example.com/hero-image.jpg');
+            background-size: cover;
+            height: 400px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .product-card {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Навигационная панель -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Зоотовары</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">О нас</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Контакты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Корзина</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Героический раздел -->
+    <div class="hero">
+        <h1>Добро пожаловать в наш магазин зоотоваров!</h1>
+        <p>Все для ваших любимцев по лучшим ценам!</p>
+        <a href="#" class="btn btn-primary">Посмотреть товары</a>
+    </div>
+
+    <!-- Карусель -->
+    <div id="carouselExampleIndicators" class="carousel slide mt-4" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://example.com/slide1.jpg" class="d-block w-100" alt="Слайд 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://example.com/slide2.jpg" class="d-block w-100" alt="Слайд 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://example.com/slide3.jpg" class="d-block w-100" alt="Слайд 3">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Назад</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Вперед</span>
+        </a>
+    </div>
+
+    <!-- Раздел с товарами -->
+    <div class="container mt-5">
+        <h2>Популярные товары</h2>
+        <div class="row">
+            <!-- Товар 1 -->
+            <div class="col-md-4 product-card">
+                <div class="card">
+                    <img src="https://example.com/product1.jpg" class="card-img-top" alt="Товар 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Товар 1</h5>
+                        <p class="card-text">Описание товара 1.</p>
+                        <a href="#" class="btn btn-primary">В корзину</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Товар 2 -->
+            <div class="col-md-4 product-card">
+                <div class="card">
+                    <img src="https://example.com/product2.jpg" class="card-img-top" alt="Товар 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Товар 2</h5>
+                        <p class="card-text">Описание товара 2.</p>
+                        <a href="#" class="btn btn-primary">В корзину</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Товар 3 -->
+            <div class="col-md-4 product-card">
+                <div class="card">
+                    <img src="https://example.com/product3.jpg" class="card-img-top" alt="Товар 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Товар 3</h5>
+                        <p class="card-text">Описание товара 3.</p>
+                        <a href="#" class="btn btn-primary">В корзину</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="bg-light text-center py-4 mt-5">
+        <p>&copy; 2023 Интернет-магазин зоотоваров. Все права защищены.</p>
+    </footer>
+
+    <!-- Скрипты Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
